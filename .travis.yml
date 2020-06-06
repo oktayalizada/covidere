@@ -1,4 +1,10 @@
-sudo: required
+dist: xenial
+language: python
+cache: pip
+python:
+  - 3.8
+  - pypy3
+
 services:
   - docker
   -
