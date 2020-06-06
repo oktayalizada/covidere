@@ -6,7 +6,7 @@ python:
 services:
   - docker
 
-before_deploy:
+script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker build -t $IMAGE_TAG .
   - docker push $IMAGE_TAG
