@@ -1,3 +1,4 @@
+sudo: required
 dist: xenial
 language: python
 python:
@@ -10,3 +11,11 @@ script:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker build -t $IMAGE_TAG .
   - docker push $IMAGE_TAG
+ 
+after_success:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin 
+  - eval $(aws ecr get-login --region eu-north-1) 
+  - docker build -t covidere .
+  - docker tag covidere:latest $AWS_ECR_ACCOUNT.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
+  - docker push $AWS_ECR_ACCOUNT.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
