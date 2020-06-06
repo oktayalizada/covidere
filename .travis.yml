@@ -13,7 +13,7 @@ script:
   - docker push $IMAGE_TAG
  
 after_success:
-  - pip install --user awscli
+  - pip install awscli
   - export PATH=$PATH:$HOME/.local/bin 
   - eval $(aws ecr get-login --region eu-north-1) 
   - docker build -t covidere .
