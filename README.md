@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/oktayalizada/covidere.svg?branch=master)](https://travis-ci.com/oktayalizada/covidere)
+
 # covidere
 A Bee for Food. Might Bee the best food platform in the world.
 
