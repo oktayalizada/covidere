@@ -5,7 +5,7 @@ python manage.py migrate --noinput
 
 gunicorn shoplokalt.wsgi:application \
     --name shoplokalt \
-    --bind 0.0.0.0:8000 \
+    --bind 0.0.0.0:80 \
     --timeout 600 \
     --workers 4 \
     --log-level=info \
