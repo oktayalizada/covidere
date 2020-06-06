@@ -12,6 +12,6 @@ script:
   - export PATH=$PATH:$HOME/.local/bin 
   - eval $(aws ecr get-login --no-include-email --region us-east-1)
   - docker build -t covidere .
-  - docker tag covidere:latest $AWS_ECR_ACCOUNT.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
-  - docker push $AWS_ECR_ACCOUNT.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
+  - docker tag covidere:latest 414431305027.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
+  - docker push 414431305027.dkr.ecr.eu-north-1.amazonaws.com/shoplokalt:latest
 
