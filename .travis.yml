@@ -5,7 +5,7 @@ python:
 
 services:
   - docker
-  -
+
 before_deploy:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker build -t $IMAGE_TAG .
